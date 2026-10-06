@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="theme-color" content="#0b0e13">
+<meta name="description" content="经典红白机风格坦克大战 - HTML5 Canvas 单文件游戏">
+<title>坦克大战 Tank Battle</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+  <div id="stage">
+    <canvas id="game" width="832" height="832"></canvas>
+    <div id="overlay" class="show"></div>
+  </div>
+
+  <aside id="hud">
+    <div class="panel">
+      <div class="label">剩余敌人</div>
+      <canvas id="enemyIcons" width="80" height="200"></canvas>
+    </div>
+
+    <div class="panel">
+      <div class="label">生命</div>
+      <canvas id="lifeIcons" width="150" height="24"></canvas>
+    </div>
+
+    <div class="panel">
+      <div class="stat"><span>STAGE</span><b id="stageEl">1</b></div>
+      <div class="stat"><span>SCORE</span><b id="scoreEl">000000</b></div>
+      <div class="stat"><span>HI-SCORE</span><b id="hiEl">000000</b></div>
+      <div class="stat" id="statusEl" style="display:none"><span>状态</span><b id="statusVal"></b></div>
+    </div>
+
+    <div class="panel help">
+      <div class="label">操作</div>
+      <div><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> / <kbd>↑↓←→</kbd> 移动</div>
+      <div><kbd>空格</kbd> / <kbd>J</kbd> 开炮</div>
+      <div><kbd>P</kbd> 暂停 &nbsp; <kbd>M</kbd> 静音</div>
+    </div>
+
+    <button id="muteBtn" class="btn">🔊 音效开</button>
+  </aside>
+</div>
+
+<div id="touch">
+  <div class="dpad">
+    <span></span><button class="dbtn" data-k="up">▲</button><span></span>
+    <button class="dbtn" data-k="left">◀</button><span></span><button class="dbtn" data-k="right">▶</button>
+    <span></span><button class="dbtn" data-k="down">▼</button><span></span>
+  </div>
+  <button id="fireBtn">发射</button>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
